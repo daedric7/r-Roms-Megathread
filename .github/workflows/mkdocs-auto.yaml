@@ -4,6 +4,8 @@ on:
     branches:
       - master 
       - main
+  # This can be used to allow manually triggering nightlies from the web interface
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
