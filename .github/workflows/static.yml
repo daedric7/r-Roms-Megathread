@@ -7,7 +7,15 @@ on:
   # This can be used to allow manually triggering nightlies from the web interface
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
